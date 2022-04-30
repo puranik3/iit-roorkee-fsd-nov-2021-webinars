@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Banking Transactions</title>
+    </head>
+    <body>
+        <script>
+            let bankBalance = 10000;
+
+            let choice;
+
+            do {
+                // display menu
+                console.log( 'Choose an option' );
+                console.log( '1. Deposit' );
+                console.log( '2. Withdraw' );
+                console.log( '3. Transfer' );
+                console.log( '0. Logout' );
+
+                let choiceStr = prompt( 'Your choice (0/1/2/3)' );
+                choice = parseInt( choiceStr, 10 );
+
+                console.log( choice );
+
+                let amountStr, amount;
+
+                switch( choice ) {
+                    case 1:
+                        amountStr = prompt( 'Amount to deposit', 0 );
+                        amount = parseInt( amountStr, 10 );
+                        bankBalance += amount;
+                        console.log( 'Your bank balance is ' + bankBalance );
+                        break;
+                    case 2:
+                        amountStr = prompt( 'Amount to withdraw', 0 );
+                        amount = parseInt( amountStr, 10 );
+                        if( bankBalance - amount < 1000 ) {
+                            console.log( 'Insufficient balance. Aborting withdrawal.' );
+                            break;
+                        }
+                        bankBalance -= amount;
+                        console.log( 'Your bank balance is ' + bankBalance );
+                        break;
+                    case 3:
+                        // EXERCISE: Take bank account of payee and log that you have transferred that amount
+                        let payeeNumber = prompt( 'Enter account number of payee' );
+                        break;
+                    case 0:
+                        break;
+                    default:
+                        console.log( 'Enter a valid option' );
+                }
+            } while( choice !== 0 );
+        </script>
+    </body>
+</html>

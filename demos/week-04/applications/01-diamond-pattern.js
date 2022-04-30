@@ -1,7 +1,7 @@
-let numRows = 5;
+let numRows = 10;
 
 // 1 iteration for printing a line
-for( let i = 1; i <= 5; i++ ) {
+for( let i = 1; i <= numRows; i++ ) {
     let line = '';
 
     // add spaces for the line
@@ -20,7 +20,7 @@ for( let i = 1; i <= 5; i++ ) {
 }
 
 // lower part of the diamond
-for( let i = 4; i >= 1; i-- ) {
+for( let i = numRows - 1; i >= 1; i-- ) {
     let line = '';
 
     // add spaces for the line

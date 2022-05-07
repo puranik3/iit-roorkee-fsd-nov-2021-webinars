@@ -9,3 +9,9 @@ console.log( independenceDay.getFullYear() );
 
 independenceDay.setDate( 20 );
 console.log( independenceDay );
+
+independenceDay.setDate( independenceDay.getDate() + 160 );
+
+console.clear();
+
+console.log( independenceDay );

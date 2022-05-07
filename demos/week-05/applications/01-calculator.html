@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+    </head>
+    <body>
+        <main>
+            <div>
+                <input type="number" id="operand-1" />
+                <select id="operator">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+                <input type="number" id="operand-2" />
+                <button id="btn-go">Go</button>
+                Result is
+                <span id="result-1"></span>
+            </div>
+
+            <hr />
+            <div>
+                <input type="text" id="expression" placeholder="Arithmetic expression" />
+                <button id="btn-expression-go">Go</button>
+                <span id="result-2"></span>
+            </div>
+        </main>
+
+        <script src="01-calculator.js"></script>
+    </body>
+</html>

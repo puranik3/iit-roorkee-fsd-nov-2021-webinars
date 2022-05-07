@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+            }
+
+            main {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .timer {
+                width: 400px;
+                padding: 10px;
+                border: 1px solid black;
+                border-radius: 5px;
+                text-align: center;
+            }
+
+            .timer img {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="timer">
+                <img src="timer.jpg" id="img-start" />
+                <input type="number" min="10" max="60" id="time" />
+                <button id="btn-start">Start</button>
+                <div>
+                    <span id="remaining-time"></span>
+                    <span id="message"></span>
+                </div>
+            </div>
+        </main>
+
+        <script src="02-timer.js"></script>
+    </body>
+</html>

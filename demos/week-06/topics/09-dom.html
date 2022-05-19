@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Working with the DOM</title>
+    </head>
+    <body>
+        <p id="para-1">
+            I am a para
+        </p>
+
+        <script>
+            const para1El = document.getElementById( 'para-1' );
+            
+            setTimeout(function() {
+                para1El.innerHTML = 'I am new text';
+                para1El.style.color = 'crimson';
+                para1El.style.fontSize = '2em';
+            }, 3000);
+
+            para1El.addEventListener( 'click', function() {
+                para1El.style.textDecoration = 'underline';
+            });
+        </script>
+    </body>
+</html>

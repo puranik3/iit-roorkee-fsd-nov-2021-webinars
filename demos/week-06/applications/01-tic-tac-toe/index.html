@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tic tac toe</title>
+        <style>
+            section {
+                text-align: center;
+            }
+
+            .game--container {
+                display: grid;
+                grid-template-columns: repeat( 3, auto );
+                width: 360px;
+                margin: 50px auto;
+            }
+
+            .cell {
+                height: 120px;
+                border: 1px solid #333333;
+                box-shadow: 0 0 0 1px #333333;
+                cursor: pointer;
+                line-height: 100px;
+                font-size: 60px;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <h1 class="game--title">Tic Tac Toe</h1>
+            <div class="game--container">
+                <div data-cell-index="0" class="cell"></div>
+                <div data-cell-index="1" class="cell"></div>
+                <div data-cell-index="2" class="cell"></div>
+
+                <div data-cell-index="3" class="cell"></div>
+                <div data-cell-index="4" class="cell"></div>
+                <div data-cell-index="5" class="cell"></div>
+
+                <div data-cell-index="6" class="cell"></div>
+                <div data-cell-index="7" class="cell"></div>
+                <div data-cell-index="8" class="cell"></div>
+            </div>
+            <h2 class="game--status"></h2>
+            <button class="game--restart">Restart game</button>
+        </section>
+
+        <script src="index.js"></script>
+    </body>
+</html>

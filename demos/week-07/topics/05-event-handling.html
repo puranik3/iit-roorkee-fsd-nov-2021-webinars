@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <button>Click me</button>
+        <a href="https://www.google.com" id="google-link">Google search page</a>
+        <input type="range" min="1" max="10" id="rating" />
+        <span id="rating-value"></span>
+
+        <script>
+            const button = document.querySelector( 'button' );
+
+            function clickHandler( event ) {
+                console.log( this );
+                console.log( event );
+            }
+
+            button.addEventListener( 'click', clickHandler );
+
+            document.querySelector( '#google-link' ).addEventListener( 'click', function( event ) {
+                if( !confirm( 'Are you sure you want to leave my beautiful website?' ) ) {
+                    event.preventDefault();
+                }
+            });
+
+            document.getElementById( 'rating' ).addEventListener( 'input', function() {
+                console.log( 'input' );
+                console.log( this.value );
+                document.getElementById( 'rating-value' ).innerText = this.value;
+            })
+
+            document.getElementById( 'rating-value' ).innerText = document.getElementById( 'rating' ).value;
+        </script>
+    </body>
+</html>

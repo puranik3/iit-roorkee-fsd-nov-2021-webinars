@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="message" class="x"></p>
+        <p class="x">Some other para</p>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugiat repellendus dolorum inventore provident cumque nisi corporis quos reprehenderit aliquam quasi qui libero nemo eaque officia cupiditate, sapiente maxime ducimus!
+        </p>
+
+        <script>
+            // DOM node
+            const messageEl = document.getElementById( 'message' );
+            const xEls = document.getElementsByClassName( 'x' );
+
+            console.dir( xEls );
+            console.dir( xEls[0] );
+            console.dir( xEls[1] );
+            console.dir( xEls.length );
+
+            messageEl.innerText = 'Your email was sent.'
+
+            const xEls2 = document.querySelectorAll( '.x' );
+            console.log( xEls2 );
+
+            const firstXEl = document.querySelector( '.x' );
+            console.log( firstXEl );
+        </script>
+    </body>
+</html>

@@ -116,9 +116,16 @@ class Worm {
 
     getNext() {
         const direction = this.direction;
+        // const {
+        //     nbCellsX,
+        //     nbCellsY
+        // } = this.game.configuration;
 
         switch( direction ) {
             case Direction.UP:
+                // if( this.head.y === 0 ) {
+                //     return new Cell( this.head.x, nbCellsY - 1 );    
+                // }
                 return new Cell( this.head.x, this.head.y - 1 );
             case Direction.DOWN:
                 return new Cell( this.head.x, this.head.y + 1 );

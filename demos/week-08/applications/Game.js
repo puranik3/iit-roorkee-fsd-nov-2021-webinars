@@ -139,10 +139,12 @@ class Game {
 
     gameOver() {
         alert( `Game over. You scored ${this.score}` );
+        this.stop();
     }
 
     win() {
         alert( 'Kudos! You completed the game. Wait for Part 2 od Snake!' );
+        this.stop();
     }
 
     onKeyDown = ( event ) => {

@@ -1,0 +1,21 @@
+{
+  "name": "applications",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -c-1 --port 8000",
+    "build": "tsc",
+    "postbuild": "node set-extension.js",
+    "watch": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "filehound": "^1.17.6",
+    "http-server": "^14.1.1",
+    "typescript": "^4.7.3"
+  }
+}

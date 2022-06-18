@@ -6,7 +6,7 @@ import PaymentOptions from '../types/PaymentOptions';
 type MonthNumber = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 
 type State = {
-    cardNumber : number,
+    cardNumber : number | '',
     name: string,
     month: MonthNumber,
     year: number,
@@ -16,7 +16,7 @@ type State = {
 
 class CreditDebitCard extends Component<{}, State> {
     static initialState = {
-        cardNumber: 0,
+        cardNumber: '' as '',
         name: '',
         month: 1 as MonthNumber,
         year: 2022,
@@ -79,6 +79,7 @@ class CreditDebitCard extends Component<{}, State> {
                                         id="cardNumber"
                                         min="100000000000"
                                         max="999999999999"
+                                        required
                                         placeholder="xxxx-xxxx-xxxx"
                                         name="cardNumber"
                                         value={this.state.cardNumber}

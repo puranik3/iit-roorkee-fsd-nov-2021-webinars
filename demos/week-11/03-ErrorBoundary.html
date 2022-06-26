@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div id="root"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.10.2/umd/react.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.10.2/umd/react-dom.production.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+
+        <script type="text/babel">
+            class ErrorBoundary extends React.Component {
+                state = {
+                    error: null
+                };
+
+                componentDidCatch( error ) {
+                    this.setState({
+                        error
+                    });
+                }
+
+                render() {
+                    const { error } = this.state;
+                    const { children } = this.props;
+
+                    return error ? <div>{error.message}</div> : children;
+                }
+            }
+
+            class X extends React.Component {
+                render() {
+                    ( Math.random() > 0.5 ) && foo(); // throws an error 1 / 2 times
+
+                    return (
+                        <div>I am X</div>
+                    );
+                }
+            }
+
+            class Y extends React.Component {
+                render() {
+                    return <div>I am well-behaved component</div>
+                }
+            }
+
+            ReactDOM.render(
+                <React.Fragment>
+                    <ErrorBoundary>
+                        <Y />
+                    </ErrorBoundary>
+                    <ErrorBoundary>
+                        <X />
+                    </ErrorBoundary>
+                </React.Fragment>,
+                document.getElementById( 'root' )
+            );
+        </script>
+    </body>
+</html>
